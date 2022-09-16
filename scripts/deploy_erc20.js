@@ -13,14 +13,14 @@ async function main() {
     // We get the contract to deploy
     const [deployer] = await hre.ethers.getSigners();
 
-    // Deploy Airdrop contract
-    const AirdropErc20 = await hre.ethers.getContractFactory("AirdropErc20");
-    const airdropErc20Contract = await AirdropErc20.deploy('0xeb74C1d56e2CBe9AE59722Cc76080288855305cE');
-    await airdropErc20Contract.deployed();
+    // Deploy ERC20 token
+    const Erc20 = await hre.ethers.getContractFactory("Token");
+    const erc20Contract = await Erc20.deploy();
+    await erc20Contract.deployed();
 
     console.log("Deploying contracts with the account:", deployer.address);
-    console.log("AirdropErc20 address:", airdropErc20Contract.address);
 
+    console.log("Erc20 address:", erc20Contract.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
