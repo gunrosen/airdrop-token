@@ -11,7 +11,7 @@ let totalUserAirdrop =0
 const AIRDROP_ADDRESS = process.env.AIRDROP_CONTRACT_ADDRESS
 
 const airdrop = async () => {
-    const content = await fs.readFile("./data/test3.json")
+    const content = await fs.readFile("./data/2_marketing_event.json")
     const data = JSON.parse(content);
     const total = data.reduce(function (currentAggregation, currentItem) {
         return  currentAggregation + currentItem.amount
